@@ -7,6 +7,7 @@ from .utils import unpickle
 
 CIFAR10_DATASET = 'cifar10'
 PLACES365_DATASET = 'places365'
+BLEACH_DATASET = 'bleach'
 
 
 class BaseDataset():
@@ -122,4 +123,33 @@ class Places365Dataset(BaseDataset):
         else:
             data = np.array(glob.glob(self.path + '/val_256/*.jpg'))
 
+        return data
+
+
+class BleachDataset(BaseDataset):
+    def __init__(self, path, training=True, augment=True):
+        super(BleachDataset, self).__init__(BLEACH_DATASET, path, training, augment)
+
+    def load(self):
+        data = []
+        if self.training:
+            for i in range(1, 6):
+                filename = '{}/data_batch_{}'.format(self.path, i)
+                batch_data = unpickle(filename)
+                if len(data) > 0:
+                    data = np.vstack((data, batch_data[b'data']))
+                else:
+                    data = batch_data[b'data']
+
+        else:
+            filename = '{}/test_batch'.format(self.path)
+            batch_data = unpickle(filename)
+            data = batch_data[b'data']
+
+        w = 256
+        h = 256
+        s = w * h
+        data = np.array(data)
+        data = np.dstack((data[:, :s], data[:, s:2 * s], data[:, 2 * s:]))
+        data = data.reshape((-1, w, h, 3))
         return data

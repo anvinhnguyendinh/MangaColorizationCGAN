@@ -144,6 +144,7 @@ class BleachDataset(BaseDataset):
                     data = batch_data[b'color']
 
         else:
+        	filename = '{}/test_batch'.format(self.path)
             f = open(filename, 'rb' )
             batch_data = np.load(filename, encoding = 'bytes').item()
             f.close()
@@ -154,5 +155,6 @@ class BleachDataset(BaseDataset):
         s = w * h
         data = np.array(data)
         for i in range(3,0,-1):
-    		data = np.swapaxes(data,i-1,i)
+            data = np.swapaxes(data,i-1,i)
+
         return data

@@ -3,7 +3,7 @@ import random
 import numpy as np
 import tensorflow as tf
 from .options import ModelOptions
-from .models import Cifar10Model, Places365Model
+from .models import Cifar10Model, Places365Model, BleachModel
 from .dataset import CIFAR10_DATASET, PLACES365_DATASET, BLEACH_DATASET
 
 

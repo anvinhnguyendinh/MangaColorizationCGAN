@@ -133,23 +133,26 @@ class BleachDataset(BaseDataset):
     def load(self):
         data = []
         if self.training:
-            for i in range(1, 6):
-                filename = '{}/data_batch_{}'.format(self.path, i)
-                batch_data = unpickle(filename)
+            for i in range(1, 5):
+                filename = '{}/data_batch_{}.data'.format(self.path, i)
+                f = open(filename, 'rb' )
+                batch_data = np.load(filename, encoding = 'bytes').item()
+                f.close()
                 if len(data) > 0:
-                    data = np.vstack((data, batch_data[b'data']))
+                    data = np.vstack((data, batch_data[b'color']))
                 else:
-                    data = batch_data[b'data']
+                    data = batch_data[b'color']
 
         else:
-            filename = '{}/test_batch'.format(self.path)
-            batch_data = unpickle(filename)
-            data = batch_data[b'data']
+            f = open(filename, 'rb' )
+            batch_data = np.load(filename, encoding = 'bytes').item()
+            f.close()
+            data = batch_data[b'color']
 
         w = 256
         h = 256
         s = w * h
         data = np.array(data)
-        data = np.dstack((data[:, :s], data[:, s:2 * s], data[:, 2 * s:]))
-        data = data.reshape((-1, w, h, 3))
+        for i in range(3,0,-1):
+    		data = np.swapaxes(data,i-1,i)
         return data

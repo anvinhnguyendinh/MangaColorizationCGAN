@@ -9,7 +9,7 @@ import tensorflow as tf
 from tensorflow import keras
 from abc import abstractmethod
 from .networks import Generator, Discriminator
-from .dataset import Places365Dataset, Cifar10Dataset
+from .dataset import Places365Dataset, Cifar10Dataset, BleachDataset
 from .ops import pixelwise_accuracy, preprocess, postprocess
 from .ops import COLORSPACE_RGB, COLORSPACE_LAB
 from .utils import stitch_images, turing_test, imshow, visualize
@@ -394,7 +394,7 @@ class BleachModel(BaseModel):
         return Discriminator('dis', kernels_dis)
 
     def create_dataset(self, training=True):
-        return Places365Dataset(
+        return BleachDataset(
             path=self.options.dataset_path,
             training=training,
             augment=self.options.augment)

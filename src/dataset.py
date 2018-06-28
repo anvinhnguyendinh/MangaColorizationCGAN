@@ -133,7 +133,7 @@ class BleachDataset(BaseDataset):
     def load(self):
         data = []
         if self.training:
-            for i in range(1, 5):
+            for i in range(1, 4):
                 filename = '{}/data_batch_{}.data'.format(self.path, i)
                 f = open(filename, 'rb' )
                 batch_data = np.load(filename, encoding = 'bytes').item()

@@ -134,27 +134,22 @@ class BleachDataset(BaseDataset):
         data = []
         if self.training:
             for i in range(1, 4):
-                filename = '{}/data_batch_{}.data'.format(self.path, i)
+                filename = '{}/mono_train_256_0{}.data'.format(self.path, i)
                 f = open(filename, 'rb' )
                 batch_data = np.load(filename, encoding = 'bytes').item()
                 f.close()
                 if len(data) > 0:
-                    data = np.vstack((data, batch_data[b'color']))
+                    data = np.vstack((data, batch_data[b'data']))
                 else:
-                    data = batch_data[b'color']
+                    data = batch_data[b'data']
 
         else:
-        	filename = '{}/test_batch'.format(self.path)
+            filename = '{}/mono_val_256_01.data'.format(self.path)
             f = open(filename, 'rb' )
             batch_data = np.load(filename, encoding = 'bytes').item()
             f.close()
-            data = batch_data[b'color']
-
-        w = 256
-        h = 256
-        s = w * h
+            data = batch_data[b'data']
+    
         data = np.array(data)
-        for i in range(3,0,-1):
-            data = np.swapaxes(data,i-1,i)
 
         return data

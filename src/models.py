@@ -174,9 +174,11 @@ class BaseModel:
         seed = seed = self.options.seed
         kernel = self.options.kernel_size
 
-        self.input_rgb = tf.placeholder(tf.float32, shape=(None, None, None, 3), name='input_rgb')
-        self.input_gray = tf.image.rgb_to_grayscale(self.input_rgb)
-        self.input_color = preprocess(self.input_rgb, colorspace_in=COLORSPACE_RGB, colorspace_out=self.options.color_space)
+        self.input_rgb = tf.placeholder(tf.float32, shape=(None, None, None, 4), name='input_rgb')
+        self.input_rgb_, self.input_gray = tf.split(self.input_rgb, [3, 1], 3)
+        #self.input_gray = tf.image.rgb_to_grayscale(self.input_rgb)
+        # self.input_gray = tf.image.rgb_to_grayscale(self.input_rgb)
+        self.input_color = preprocess(self.input_rgb_, colorspace_in=COLORSPACE_RGB, colorspace_out=self.options.color_space)
 
         gen = gen_factory.create(self.input_gray, kernel, seed)
         dis_real = dis_factory.create(tf.concat([self.input_gray, self.input_color], 3), kernel, seed)

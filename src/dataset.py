@@ -134,7 +134,7 @@ class BleachDataset(BaseDataset):
         data = []
         if self.training:
             for i in range(1, 4):
-                filename = '{}/mono_train_256_0{}.data'.format(self.path, i)
+                filename = '{}/bleach/mono_train_256_0{}.data'.format(self.path, i)
                 f = open(filename, 'rb' )
                 batch_data = np.load(filename, encoding = 'bytes').item()
                 f.close()
@@ -144,7 +144,7 @@ class BleachDataset(BaseDataset):
                     data = batch_data[b'data']
 
         else:
-            filename = '{}/mono_val_256_01.data'.format(self.path)
+            filename = '{}/bleach/mono_val_256_01.data'.format(self.path)
             f = open(filename, 'rb' )
             batch_data = np.load(filename, encoding = 'bytes').item()
             f.close()

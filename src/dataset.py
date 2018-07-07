@@ -158,3 +158,33 @@ class BleachDataset(BaseDataset):
             return self._load('val')
         else:
             return self._load('test')
+
+class OnePieceDataset(BaseDataset):
+    def __init__(self, path, dimension=0, training=True, evaluate=True, augment=True):
+        super(OnePieceDataset, self).__init__(ONEPIECE_DATASET, path, dimension, training, evaluate, augment)
+
+    def _load(self, name):
+        data, count = [], 1
+        while True:
+            filename = '{}_{}_{:d}_{:02d}.data'.format(self.path, name, self.dimension, count)
+            try:
+                f = open(filename, 'rb')
+                # print(name + str(count))
+                count += 1
+            except:
+                break
+            batch_data = np.load(f, encoding='bytes').item()
+            f.close()
+            if len(data) > 0:
+                data = np.vstack((data, batch_data[b'data']))
+            else:
+                data = batch_data[b'data']
+        return np.array(data)
+
+    def load(self):
+        if self.training:
+            return self._load('train')
+        elif self.evaluate:
+            return self._load('val')
+        else:
+            return self._load('test')

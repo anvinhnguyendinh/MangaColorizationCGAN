@@ -19,7 +19,7 @@ class ModelOptions:
         parser.add_argument('--seed', type=int, default=0, metavar='S', help='random seed (default: 0)')
         parser.add_argument('--name', type=str, default='CGAN', help='arbitrary model name (default: CGAN)')
         parser.add_argument('--mode', default=0, help='run mode [0: train, 1: evaluate, 2: test] (default: 0)')
-        parser.add_argument('--dataset', type=str, default='bleach', help='the name of dataset [places365, cifar10, bleach] (default: cifar10)')
+        parser.add_argument('--dataset', type=str, default='bleach', help='the name of dataset [places365, cifar10, bleach] (default: bleach)')
         parser.add_argument('--dataset-path', type=str, default='../dataset', help='dataset path (default: /raid/hlcv-projects/student_directories/team06/dataset)')
         parser.add_argument('--checkpoints-path', type=str, default='./checkpoints', help='models are saved here (default: ./checkpoints)')
         parser.add_argument('--batch-size', type=int, default=16, metavar='N', help='input batch size for training (default: 16)')

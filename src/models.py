@@ -503,7 +503,7 @@ class BleachBaselineModel(BaseModel):
             (64, 2, 0)      # [batch, 128, 128, 64] => [batch, 256, 256, 64]
         ]
 
-        return Generator('gen', kernels_gen_encoder, kernels_gen_decoder)
+        return Baseline('gen', kernels_gen_encoder, kernels_gen_decoder)
 
 
     def create_dataset(self, training=True):

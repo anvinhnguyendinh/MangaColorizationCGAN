@@ -9,6 +9,9 @@ from .dataset import CIFAR10_DATASET, PLACES365_DATASET, BLEACH_DATASET
 
 def main(options):
 
+    if options.mode == 0:
+        options.evaluate_type = True
+
     # reset tensorflow graph
     tf.reset_default_graph()
 
@@ -28,15 +31,17 @@ def main(options):
         elif options.dataset == PLACES365_DATASET:
             model = Places365Model(sess, options)
 
-        elif options.dataset == BLEACH_DATASET:
+        elif options.dataset.startswith(BLEACH_DATASET):
             model = BleachModel(sess,options) 
 
         if not os.path.exists(options.checkpoints_path):
             os.makedirs(options.checkpoints_path)
 
         if options.log:
-            open(model.train_log_file, 'w').close()
-            open(model.test_log_file, 'w').close()
+            if options.mode == 0:
+                open(model.train_log_file, 'w').close()
+            if not options.evaluate_type:
+                open(model.test_log_file, 'w').close()
 
         # build the model and initialize
         model.build()
@@ -61,7 +66,8 @@ def main(options):
         elif options.mode == 1:
             model.evaluate()
             while True:
-                model.sample()
+                model.sample(show=False)
+                break
 
         else:
             model.turing_test()

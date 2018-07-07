@@ -11,10 +11,12 @@ BLEACH_DATASET = 'bleach'
 
 
 class BaseDataset():
-    def __init__(self, name, path, training=True, augment=True):
+    def __init__(self, name, path, dimension=0, training=True, evaluate=True, augment=True):
         self.name = name
         self.augment = augment and training
+        self.dimension = dimension
         self.training = training
+        self.evaluate = evaluate
         self.path = path
         self._data = []
 
@@ -83,8 +85,8 @@ class BaseDataset():
 
 
 class Cifar10Dataset(BaseDataset):
-    def __init__(self, path, training=True, augment=True):
-        super(Cifar10Dataset, self).__init__(CIFAR10_DATASET, path, training, augment)
+    def __init__(self, path, dimension=0, training=True, evaluate=True, augment=True):
+        super(Cifar10Dataset, self).__init__(CIFAR10_DATASET, path, dimension, training, evaluate, augment)
 
     def load(self):
         data = []
@@ -112,8 +114,8 @@ class Cifar10Dataset(BaseDataset):
 
 
 class Places365Dataset(BaseDataset):
-    def __init__(self, path, training=True, augment=True):
-        super(Places365Dataset, self).__init__(PLACES365_DATASET, path, training, augment)
+    def __init__(self, path, dimension=0, training=True, evaluate=True, augment=True):
+        super(Places365Dataset, self).__init__(PLACES365_DATASET, path, dimension, training, evaluate, augment)
 
     def load(self):
         if self.training:
@@ -127,29 +129,31 @@ class Places365Dataset(BaseDataset):
 
 
 class BleachDataset(BaseDataset):
-    def __init__(self, path, training=True, augment=True):
-        super(BleachDataset, self).__init__(BLEACH_DATASET, path, training, augment)
+    def __init__(self, path, dimension=0, training=True, evaluate=True, augment=True):
+        super(BleachDataset, self).__init__(BLEACH_DATASET, path, dimension, training, evaluate, augment)
+
+    def _load(self, name):
+        data, count = [], 1
+        while True:
+            filename = '{}_{}_{:d}_{:02d}.data'.format(self.path, name, self.dimension, count)
+            try:
+                f = open(filename, 'rb')
+                # print(name + str(count))
+                count += 1
+            except:
+                break
+            batch_data = np.load(f, encoding='bytes').item()
+            f.close()
+            if len(data) > 0:
+                data = np.vstack((data, batch_data[b'data']))
+            else:
+                data = batch_data[b'data']
+        return np.array(data)
 
     def load(self):
-        data = []
         if self.training:
-            for i in range(1, 4):
-                filename = '{}/bleach/mono_train_256_0{}.data'.format(self.path, i)
-                f = open(filename, 'rb' )
-                batch_data = np.load(filename, encoding = 'bytes').item()
-                f.close()
-                if len(data) > 0:
-                    data = np.vstack((data, batch_data[b'data']))
-                else:
-                    data = batch_data[b'data']
-
+            return self._load('train')
+        elif self.evaluate:
+            return self._load('val')
         else:
-            filename = '{}/bleach/mono_val_256_01.data'.format(self.path)
-            f = open(filename, 'rb' )
-            batch_data = np.load(filename, encoding = 'bytes').item()
-            f.close()
-            data = batch_data[b'data']
-    
-        data = np.array(data)
-
-        return data
+            return self._load('test')

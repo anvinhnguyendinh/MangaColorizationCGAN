@@ -21,15 +21,16 @@ class BaseModel:
         self.options = options
         self.name = options.name
         self.samples_dir = os.path.join(options.checkpoints_path, 'samples')
-        self.test_log_file = os.path.join(options.checkpoints_path, 'log_test.dat')
-        self.train_log_file = os.path.join(options.checkpoints_path, 'log_train.dat')
-        self.global_step = tf.Variable(0, name='global_step', trainable=False)
-        self.dataset_train = self.create_dataset(True)
-        self.dataset_test = self.create_dataset(False)
+        options.long_long_name = '_'.join(['val' if options.evaluate_type else 'test', options.long_name])
+        self.test_log_file  = os.path.join(options.checkpoints_path, 'log_%s.dat' % self.options.long_long_name)
+        self.train_log_file = os.path.join(options.checkpoints_path, 'log_train_%s.dat' % self.options.long_name)
+        self.dataset_test  = self.create_dataset(False)
+        self.global_step   = tf.Variable(0, name='global_step', trainable=False)
+        self.dataset_train = self.create_dataset(True) if options.mode == 0 else None
         self.sample_generator = self.dataset_test.generator(options.sample_size, True)
-        self.iteration = 0
         self.epoch = 0
-        self.is_built = False
+        self.iteration = 0
+        self.is_built  = False
 
     def train(self):
         self.build()
@@ -120,6 +121,9 @@ class BaseModel:
                 # (epoch, step, lossD, lossD_fake, lossD_real, lossG, lossG_l1, lossG_gan, acc)
                 f.write('%d %d %f %f %f %f %f %f %f\n' % (self.epoch, result[7], result[0], result[1], result[2], result[3], result[4], result[5], result[6]))
 
+        # if not self.options.evaluate_type:
+        #     self.sample(show=False)
+
         print('\n')
 
     def sample(self, show=True):
@@ -136,7 +140,7 @@ class BaseModel:
         if not os.path.exists(self.samples_dir):
             os.makedirs(self.samples_dir)
 
-        sample = self.options.dataset + "_" + str(step).zfill(5) + ".png"
+        sample = self.options.long_long_name + "_" + str(step).zfill(5) + ".png"
 
         if show:
             imshow(np.array(img), self.name)
@@ -176,7 +180,7 @@ class BaseModel:
 
         self.input_rgb = tf.placeholder(tf.float32, shape=(None, None, None, 4), name='input_rgb')
         self.input_rgb_, self.input_gray = tf.split(self.input_rgb, [3, 1], 3)
-        #self.input_gray = tf.image.rgb_to_grayscale(self.input_rgb)
+        # self.input_gray = tf.image.rgb_to_grayscale(self.input_rgb)
         # self.input_gray = tf.image.rgb_to_grayscale(self.input_rgb)
         self.input_color = preprocess(self.input_rgb_, colorspace_in=COLORSPACE_RGB, colorspace_out=self.options.color_space)
 
@@ -234,7 +238,7 @@ class BaseModel:
 
     def save(self):
         print('saving model...\n')
-        self.saver.save(self.sess, os.path.join(self.options.checkpoints_path, 'CGAN_' + self.options.dataset), write_meta_graph=False)
+        self.saver.save(self.sess, os.path.join(self.options.checkpoints_path, 'CGAN_' + self.options.long_name), write_meta_graph=False)
 
     def eval_outputs(self, feed_dic):
         '''
@@ -302,7 +306,9 @@ class Cifar10Model(BaseModel):
     def create_dataset(self, training=True):
         return Cifar10Dataset(
             path=self.options.dataset_path,
+            dimension=self.options.dimension,
             training=training,
+            evaluate=self.options.evaluate_type,
             augment=self.options.augment)
 
 
@@ -350,13 +356,19 @@ class Places365Model(BaseModel):
     def create_dataset(self, training=True):
         return Places365Dataset(
             path=self.options.dataset_path,
+            dimension=self.options.dimension,
             training=training,
+            evaluate=self.options.evaluate_type,
             augment=self.options.augment)
 
 
 class BleachModel(BaseModel):
     def __init__(self, sess, options):
         super(BleachModel, self).__init__(sess, options)
+        if options.mode == 0:
+            steps = int(np.ceil(len(self.dataset_train) / self.options.batch_size))
+            self.options.save_interval *= steps
+            self.options.sample_interval *= steps
 
     def create_generator(self):
         kernels_gen_encoder = [
@@ -398,5 +410,7 @@ class BleachModel(BaseModel):
     def create_dataset(self, training=True):
         return BleachDataset(
             path=self.options.dataset_path,
+            dimension=self.options.dimension,
             training=training,
+            evaluate=self.options.evaluate_type,
             augment=self.options.augment)

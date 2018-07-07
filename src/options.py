@@ -20,10 +20,10 @@ class ModelOptions:
         parser.add_argument('--name', type=str, default='CGAN', help='arbitrary model name (default: CGAN)')
         parser.add_argument('--mode', default=0, help='run mode [0: train, 1: evaluate, 2: test] (default: 0)')
         parser.add_argument('--dataset', type=str, default='bleach', help='the name of dataset [places365, cifar10, bleach] (default: cifar10)')
-        parser.add_argument('--dataset-path', type=str, default='/raid/hlcv-projects/student_directories/team06/dataset', help='dataset path (default: /raid/hlcv-projects/student_directories/team06/dataset)')
+        parser.add_argument('--dataset-path', type=str, default='../dataset', help='dataset path (default: /raid/hlcv-projects/student_directories/team06/dataset)')
         parser.add_argument('--checkpoints-path', type=str, default='./checkpoints', help='models are saved here (default: ./checkpoints)')
         parser.add_argument('--batch-size', type=int, default=16, metavar='N', help='input batch size for training (default: 16)')
-        parser.add_argument('--color-space', type=str, default='rgb', help='model color space [lab, rgb] (default: lab)')
+        parser.add_argument('--color-space', type=str, default='lab', help='model color space [lab, rgb] (default: lab)')
         parser.add_argument('--epochs', type=int, default=30, metavar='N', help='number of epochs to train (default: 30)')
         parser.add_argument('--lr', type=float, default=3e-4, metavar='LR', help='learning rate (default: 3e-4)')
         parser.add_argument('--lr-decay-rate', type=float, default=0.1, help='learning rate exponentially decay rate (default: 0.1)')
@@ -35,19 +35,21 @@ class ModelOptions:
         parser.add_argument('--acc-thresh', type=float, default=2.0, help="accuracy threshold (default: 2.0)")
         parser.add_argument('--kernel-size', type=int, default=4, help="default kernel size (default: 4)")
         parser.add_argument('--save', type=str2bool, default=True, help='True for saving (default: True)')
-        parser.add_argument('--save-interval', type=int, default=1000, help='how many batches to wait before saving model (default: 1000)')
+        parser.add_argument('--save-interval', type=int, default=25, help='how many batches to wait before saving model (default: 1000)')
         parser.add_argument('--sample', type=str2bool, default=True, help='True for sampling (default: True)')
         parser.add_argument('--sample-size', type=int, default=8, help='number of images to sample (default: 8)')
-        parser.add_argument('--sample-interval', type=int, default=1000, help='how many batches to wait before sampling (default: 1000)')
+        parser.add_argument('--sample-interval', type=int, default=25, help='how many batches to wait before sampling (default: 1000)')
         parser.add_argument('--validate', type=str2bool, default=True, help='True for validation (default: True)')
         parser.add_argument('--validate-interval', type=int, default=0, help='how many batches to wait before validating (default: 0)')
         parser.add_argument('--log', type=str2bool, default=True, help='True for logging (default: True)')
-        parser.add_argument('--log-interval', type=int, default=10, help='how many batches to wait before logging training status (default: 10)')
+        parser.add_argument('--log-interval', type=int, default=5, help='how many batches to wait before logging training status (default: 10)')
         parser.add_argument('--visualize', type=str2bool, default=False, help='True for accuracy visualization (default: False)')
         parser.add_argument('--visualize-window', type=int, default=100, help='the exponentially moving average window width (default: 100)')
         parser.add_argument('--test-size', type=int, default=100, metavar='N', help='number of Turing tests (default: 100)')
         parser.add_argument('--test-delay', type=int, default=0, metavar='N', help='number of seconds to wait when doing Turing test, 0 for unlimited (default: 0)')
         parser.add_argument('--gpu-ids', type=str, default='5', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
+        parser.add_argument('--evaluate-type', type=str2bool, default=True, help='True for validation')
+        parser.add_argument('--dimension', type=int, default=256, help='each image has size dimension x dimension')
 
         self._parser = parser
 
@@ -60,10 +62,14 @@ class ModelOptions:
         if opt.seed == 0:
             opt.seed = random.randint(0, 2**31 - 1)
 
-        if opt.dataset_path == './dataset':
-            opt.dataset_path += ('/' + opt.dataset)
+        opt.long_long_name = ''
+        opt.long_name = '_'.join([opt.dataset, opt.color_space.lower(), str(opt.dimension)])
+        
+        tmp_dataset = opt.dataset.split('-')
+        if opt.dataset_path == '../dataset':
+            opt.dataset_path += ('/' + tmp_dataset[0] + '/' + tmp_dataset[1])
 
         if opt.checkpoints_path == './checkpoints':
-            opt.checkpoints_path += ('/' + opt.dataset)
+            opt.checkpoints_path += ('/' + tmp_dataset[0] + '/' + opt.long_name)
 
         return opt

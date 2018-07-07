@@ -9,7 +9,7 @@ import tensorflow as tf
 from tensorflow import keras
 from abc import abstractmethod
 from .networks import Generator, Discriminator
-from .dataset import Places365Dataset, Cifar10Dataset, BleachDataset
+from .dataset import Places365Dataset, Cifar10Dataset, BleachDataset, OnePieceDataset
 from .ops import pixelwise_accuracy, preprocess, postprocess
 from .ops import COLORSPACE_RGB, COLORSPACE_LAB
 from .utils import stitch_images, turing_test, imshow, visualize
@@ -409,6 +409,59 @@ class BleachModel(BaseModel):
 
     def create_dataset(self, training=True):
         return BleachDataset(
+            path=self.options.dataset_path,
+            dimension=self.options.dimension,
+            training=training,
+            evaluate=self.options.evaluate_type,
+            augment=self.options.augment)
+
+class OnePieceModel(BaseModel):
+    def __init__(self, sess, options):
+        super(OnePieceModel, self).__init__(sess, options)
+        if options.mode == 0:
+            steps = int(np.ceil(len(self.dataset_train) / self.options.batch_size))
+            self.options.save_interval *= steps
+            self.options.sample_interval *= steps
+
+    def create_generator(self):
+        kernels_gen_encoder = [
+            (64, 1, 0),     # [batch, 256, 256, ch] => [batch, 256, 256, 64]
+            (64, 2, 0),     # [batch, 256, 256, 64] => [batch, 128, 128, 64]
+            (128, 2, 0),    # [batch, 128, 128, 64] => [batch, 64, 64, 128]
+            (256, 2, 0),    # [batch, 64, 64, 128] => [batch, 32, 32, 256]
+            (512, 2, 0),    # [batch, 32, 32, 256] => [batch, 16, 16, 512]
+            (512, 2, 0),    # [batch, 16, 16, 512] => [batch, 8, 8, 512]
+            (512, 2, 0),    # [batch, 8, 8, 512] => [batch, 4, 4, 512]
+            (512, 2, 0)     # [batch, 4, 4, 512] => [batch, 2, 2, 512]
+        ]
+
+        kernels_gen_decoder = [
+            (512, 2, 0.5),  # [batch, 2, 2, 512] => [batch, 4, 4, 512]
+            (512, 2, 0.5),  # [batch, 4, 4, 512] => [batch, 8, 8, 512]
+            (512, 2, 0.5),  # [batch, 8, 8, 512] => [batch, 16, 16, 512]
+            (256, 2, 0),    # [batch, 16, 16, 512] => [batch, 32, 32, 256]
+            (128, 2, 0),    # [batch, 32, 32, 256] => [batch, 64, 64, 128]
+            (64, 2, 0),     # [batch, 64, 64, 128] => [batch, 128, 128, 64]
+            (64, 2, 0)      # [batch, 128, 128, 64] => [batch, 256, 256, 64]
+        ]
+
+        return Generator('gen', kernels_gen_encoder, kernels_gen_decoder)
+
+    def create_discriminator(self):
+        kernels_dis = [
+            (64, 2, 0),     # [batch, 256, 256, ch] => [batch, 128, 128, 64]
+            (128, 2, 0),    # [batch, 128, 128, 64] => [batch, 64, 64, 128]
+            (256, 2, 0),    # [batch, 64, 64, 128] => [batch, 32, 32, 256]
+            (512, 2, 0),    # [batch, 32, 32, 256] => [batch, 16, 16, 512]
+            (512, 2, 0),    # [batch, 16, 16, 512] => [batch, 8, 8, 512]
+            (512, 2, 0),    # [batch, 8, 8, 512] => [batch, 4, 4, 512]
+            (512, 1, 0),    # [batch, 4, 4, 512] => [batch, 4, 4, 512]
+        ]
+
+        return Discriminator('dis', kernels_dis)
+
+    def create_dataset(self, training=True):
+        return OnePieceDataset(
             path=self.options.dataset_path,
             dimension=self.options.dimension,
             training=training,

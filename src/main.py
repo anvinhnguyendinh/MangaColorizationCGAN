@@ -3,8 +3,8 @@ import random
 import numpy as np
 import tensorflow as tf
 from .options import ModelOptions
-from .models import Cifar10Model, Places365Model, BleachModel
-from .dataset import CIFAR10_DATASET, PLACES365_DATASET, BLEACH_DATASET
+from .models import Cifar10Model, Places365Model, BleachModel, OnePieceModel
+from .dataset import CIFAR10_DATASET, PLACES365_DATASET, BLEACH_DATASET, ONEPIECE_DATASET
 
 
 def main(options):
@@ -32,7 +32,10 @@ def main(options):
             model = Places365Model(sess, options)
 
         elif options.dataset.startswith(BLEACH_DATASET):
-            model = BleachModel(sess,options) 
+            model = BleachModel(sess,options)
+
+        elif options.dataset.startswith(ONEPIECE_DATASET):
+            model = OnePieceModel(sess,options)
 
         if not os.path.exists(options.checkpoints_path):
             os.makedirs(options.checkpoints_path)

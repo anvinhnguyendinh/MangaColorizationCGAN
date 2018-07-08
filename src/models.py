@@ -9,7 +9,7 @@ import tensorflow as tf
 from tensorflow import keras
 from abc import abstractmethod
 from .networks import Generator, Discriminator, Baseline
-from .dataset import Places365Dataset, Cifar10Dataset, BleachDataset, OnePieceDataset
+from .dataset import Places365Dataset, Cifar10Dataset, BleachDataset
 from .ops import pixelwise_accuracy, preprocess, postprocess
 from .ops import COLORSPACE_RGB, COLORSPACE_LAB
 from .utils import stitch_images, turing_test, imshow, visualize
@@ -21,7 +21,6 @@ class BaseModel:
         self.options = options
         self.name = options.name
         self.samples_dir = os.path.join(options.checkpoints_path, 'samples')
-        options.long_long_name = '_'.join(['val' if options.evaluate_type else 'test', options.long_name])
         self.test_log_file  = os.path.join(options.checkpoints_path, 'log_%s.dat' % self.options.long_long_name)
         self.train_log_file = os.path.join(options.checkpoints_path, 'log_train_%s.dat' % self.options.long_name)
         self.dataset_test  = self.create_dataset(False)
@@ -135,7 +134,7 @@ class BaseModel:
         step, rate = self.sess.run([self.global_step, self.learning_rate])
         fake_image, input_gray = self.sess.run([self.sampler, self.input_gray], feed_dict=feed_dic)
         fake_image = postprocess(tf.convert_to_tensor(fake_image), colorspace_in=self.options.color_space, colorspace_out=COLORSPACE_RGB)
-        img = stitch_images(input_gray, input_rgb, fake_image.eval())
+        img = stitch_images(input_gray, input_rgb, fake_image.eval()) #
 
         if not os.path.exists(self.samples_dir):
             os.makedirs(self.samples_dir)
@@ -161,7 +160,7 @@ class BaseModel:
             fake_image = postprocess(tf.convert_to_tensor(fake_image), colorspace_in=self.options.color_space, colorspace_out=COLORSPACE_RGB)
 
             for i in range(np.min([batch_size, self.options.test_size - count])):
-                res = turing_test(input_rgb[i], fake_image.eval()[i], self.options.test_delay)
+                res = turing_test(input_rgb[i, :, :, :3], fake_image.eval()[i], self.options.test_delay)
                 count += 1
                 score += res
                 print('success: %d - fail: %d - rate: %f' % (score, count - score, (count - score) / count))
@@ -361,7 +360,10 @@ class Places365Model(BaseModel):
             evaluate=self.options.evaluate_type,
             augment=self.options.augment)
 
-#Definition of the new Model classes
+
+
+# Definition of the new Model classes
+
 class BleachModel(BaseModel):
     def __init__(self, sess, options):
         super(BleachModel, self).__init__(sess, options)
@@ -415,63 +417,9 @@ class BleachModel(BaseModel):
             evaluate=self.options.evaluate_type,
             augment=self.options.augment)
 
-class OnePieceModel(BaseModel):
-    def __init__(self, sess, options):
-        super(OnePieceModel, self).__init__(sess, options)
-        if options.mode == 0:
-            steps = int(np.ceil(len(self.dataset_train) / self.options.batch_size))
-            self.options.save_interval *= steps
-            self.options.sample_interval *= steps
-
-    def create_generator(self):
-        kernels_gen_encoder = [
-            (64, 1, 0),     # [batch, 256, 256, ch] => [batch, 256, 256, 64]
-            (64, 2, 0),     # [batch, 256, 256, 64] => [batch, 128, 128, 64]
-            (128, 2, 0),    # [batch, 128, 128, 64] => [batch, 64, 64, 128]
-            (256, 2, 0),    # [batch, 64, 64, 128] => [batch, 32, 32, 256]
-            (512, 2, 0),    # [batch, 32, 32, 256] => [batch, 16, 16, 512]
-            (512, 2, 0),    # [batch, 16, 16, 512] => [batch, 8, 8, 512]
-            (512, 2, 0),    # [batch, 8, 8, 512] => [batch, 4, 4, 512]
-            (512, 2, 0)     # [batch, 4, 4, 512] => [batch, 2, 2, 512]
-        ]
-
-        kernels_gen_decoder = [
-            (512, 2, 0.5),  # [batch, 2, 2, 512] => [batch, 4, 4, 512]
-            (512, 2, 0.5),  # [batch, 4, 4, 512] => [batch, 8, 8, 512]
-            (512, 2, 0.5),  # [batch, 8, 8, 512] => [batch, 16, 16, 512]
-            (256, 2, 0),    # [batch, 16, 16, 512] => [batch, 32, 32, 256]
-            (128, 2, 0),    # [batch, 32, 32, 256] => [batch, 64, 64, 128]
-            (64, 2, 0),     # [batch, 64, 64, 128] => [batch, 128, 128, 64]
-            (64, 2, 0)      # [batch, 128, 128, 64] => [batch, 256, 256, 64]
-        ]
-
-        return Generator('gen', kernels_gen_encoder, kernels_gen_decoder)
-
-    def create_discriminator(self):
-        kernels_dis = [
-            (64, 2, 0),     # [batch, 256, 256, ch] => [batch, 128, 128, 64]
-            (128, 2, 0),    # [batch, 128, 128, 64] => [batch, 64, 64, 128]
-            (256, 2, 0),    # [batch, 64, 64, 128] => [batch, 32, 32, 256]
-            (512, 2, 0),    # [batch, 32, 32, 256] => [batch, 16, 16, 512]
-            (512, 2, 0),    # [batch, 16, 16, 512] => [batch, 8, 8, 512]
-            (512, 2, 0),    # [batch, 8, 8, 512] => [batch, 4, 4, 512]
-            (512, 1, 0),    # [batch, 4, 4, 512] => [batch, 4, 4, 512]
-        ]
-
-        return Discriminator('dis', kernels_dis)
-
-    def create_dataset(self, training=True):
-        return OnePieceDataset(
-            path=self.options.dataset_path,
-            dimension=self.options.dimension,
-            training=training,
-            evaluate=self.options.evaluate_type,
-            augment=self.options.augment)
 
 
-
-
-#Begining of the baseline model definitions
+# Begining of the baseline model definitions
 
 class BleachBaselineModel(BaseModel):
     def __init__(self, sess, options):
@@ -505,53 +453,8 @@ class BleachBaselineModel(BaseModel):
 
         return Baseline('gen', kernels_gen_encoder, kernels_gen_decoder)
 
-
     def create_dataset(self, training=True):
         return BleachDataset(
-            path=self.options.dataset_path,
-            dimension=self.options.dimension,
-            training=training,
-            evaluate=self.options.evaluate_type,
-            augment=self.options.augment)
-
-
-
-
-class OnePieceBaselineModel(BaseModel):
-    def __init__(self, sess, options):
-        super(OnePieceBaselineModel, self).__init__(sess, options)
-        if options.mode == 0:
-            steps = int(np.ceil(len(self.dataset_train) / self.options.batch_size))
-            self.options.save_interval *= steps
-            self.options.sample_interval *= steps
-
-    def create_generator(self):
-        kernels_gen_encoder = [
-            (64, 1, 0),     # [batch, 256, 256, ch] => [batch, 256, 256, 64]
-            (64, 2, 0),     # [batch, 256, 256, 64] => [batch, 128, 128, 64]
-            (128, 2, 0),    # [batch, 128, 128, 64] => [batch, 64, 64, 128]
-            (256, 2, 0),    # [batch, 64, 64, 128] => [batch, 32, 32, 256]
-            (512, 2, 0),    # [batch, 32, 32, 256] => [batch, 16, 16, 512]
-            (512, 2, 0),    # [batch, 16, 16, 512] => [batch, 8, 8, 512]
-            (512, 2, 0),    # [batch, 8, 8, 512] => [batch, 4, 4, 512]
-            (512, 2, 0)     # [batch, 4, 4, 512] => [batch, 2, 2, 512]
-        ]
-
-        kernels_gen_decoder = [
-            (512, 2, 0.5),  # [batch, 2, 2, 512] => [batch, 4, 4, 512]
-            (512, 2, 0.5),  # [batch, 4, 4, 512] => [batch, 8, 8, 512]
-            (512, 2, 0.5),  # [batch, 8, 8, 512] => [batch, 16, 16, 512]
-            (256, 2, 0),    # [batch, 16, 16, 512] => [batch, 32, 32, 256]
-            (128, 2, 0),    # [batch, 32, 32, 256] => [batch, 64, 64, 128]
-            (64, 2, 0),     # [batch, 64, 64, 128] => [batch, 128, 128, 64]
-            (64, 2, 0)      # [batch, 128, 128, 64] => [batch, 256, 256, 64]
-        ]
-
-        return Baseline('gen', kernels_gen_encoder, kernels_gen_decoder)
-
-
-    def create_dataset(self, training=True):
-        return OnePieceDataset(
             path=self.options.dataset_path,
             dimension=self.options.dimension,
             training=training,

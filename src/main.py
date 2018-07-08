@@ -3,14 +3,11 @@ import random
 import numpy as np
 import tensorflow as tf
 from .options import ModelOptions
-from .models import Cifar10Model, Places365Model, BleachModel, OnePieceModel
+from .models import Cifar10Model, Places365Model, BleachModel
 from .dataset import CIFAR10_DATASET, PLACES365_DATASET, BLEACH_DATASET, ONEPIECE_DATASET
 
 
 def main(options):
-
-    if options.mode == 0:
-        options.evaluate_type = True
 
     # reset tensorflow graph
     tf.reset_default_graph()
@@ -35,7 +32,7 @@ def main(options):
             model = BleachModel(sess,options)
 
         elif options.dataset.startswith(ONEPIECE_DATASET):
-            model = OnePieceModel(sess,options)
+            model = BleachModel(sess,options)
 
         if not os.path.exists(options.checkpoints_path):
             os.makedirs(options.checkpoints_path)

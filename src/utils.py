@@ -18,6 +18,8 @@ def stitch_images(grayscale, original, pred):
         xoffset = int(ix % img_per_row) * width * 3 + int(ix % img_per_row) * gap
         yoffset = int(ix / img_per_row) * height
         im1 = Image.fromarray(grayscale[ix])
+        # im2 = Image.fromarray(original[ix, :, :, 2::-1])
+        # im3 = Image.fromarray((pred[ix, :, :, ::-1] * 255).astype(np.uint8))
         im2 = Image.fromarray(original[ix])
         im3 = Image.fromarray((pred[ix] * 255).astype(np.uint8))
         img.paste(im1, (xoffset, yoffset))

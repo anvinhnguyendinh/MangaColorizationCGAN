@@ -78,10 +78,10 @@ def pixelwise_accuracy(img_real, img_fake, colorspace, thresh):
 def preprocess(img, colorspace_in, colorspace_out):
     if colorspace_out.upper() == COLORSPACE_RGB:
         if colorspace_in == COLORSPACE_LAB:
-            img = lab_to_rgb(img)
-
-        # [0, 1] => [-1, 1]
-        img = (img / 255.0) * 2 - 1
+            img = lab_to_rgb(img) * 2 - 1
+        else:
+            # [0, 1] => [-1, 1]
+            img = (img / 255.0) * 2 - 1
 
     elif colorspace_out.upper() == COLORSPACE_LAB:
         if colorspace_in == COLORSPACE_RGB:

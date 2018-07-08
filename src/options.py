@@ -21,9 +21,9 @@ class ModelOptions:
         parser.add_argument('--mode', default=0, help='run mode [0: train, 1: evaluate, 2: test] (default: 0)')
         parser.add_argument('--dataset', type=str, default='bleach', help='the name of dataset [places365, cifar10, bleach] (default: bleach)')
         parser.add_argument('--dataset-path', type=str, default='../dataset', help='dataset path (default: /raid/hlcv-projects/student_directories/team06/dataset)')
-        parser.add_argument('--checkpoints-path', type=str, default='./checkpoints', help='models are saved here (default: ./checkpoints)')
+        parser.add_argument('--checkpoints-path', type=str, default='../checkpoints', help='models are saved here (default: ./checkpoints)')
         parser.add_argument('--batch-size', type=int, default=16, metavar='N', help='input batch size for training (default: 16)')
-        parser.add_argument('--color-space', type=str, default='lab', help='model color space [lab, rgb] (default: lab)')
+        parser.add_argument('--color-space', type=str, default='rgb', help='model color space [lab, rgb] (default: lab)')
         parser.add_argument('--epochs', type=int, default=30, metavar='N', help='number of epochs to train (default: 30)')
         parser.add_argument('--lr', type=float, default=3e-4, metavar='LR', help='learning rate (default: 3e-4)')
         parser.add_argument('--lr-decay-rate', type=float, default=0.1, help='learning rate exponentially decay rate (default: 0.1)')
@@ -53,7 +53,7 @@ class ModelOptions:
 
         self._parser = parser
 
-    def parse(self):
+    def parse(self, mode=None):
         opt = self._parser.parse_args()
         os.environ['CUDA_VISIBLE_DEVICES'] = opt.gpu_ids
 
@@ -62,14 +62,19 @@ class ModelOptions:
         if opt.seed == 0:
             opt.seed = random.randint(0, 2**31 - 1)
 
-        opt.long_long_name = ''
+        if mode is not None:
+            opt.mode = mode
+        if opt.mode == 0:
+            opt.evaluate_type = True
+        
         opt.long_name = '_'.join([opt.dataset, opt.color_space.lower(), str(opt.dimension)])
+        opt.long_long_name = '_'.join(['val' if opt.evaluate_type else 'test', opt.long_name])
         
         tmp_dataset = opt.dataset.split('-')
         if opt.dataset_path == '../dataset':
             opt.dataset_path += ('/' + tmp_dataset[0] + '/' + tmp_dataset[1])
 
-        if opt.checkpoints_path == './checkpoints':
+        if opt.checkpoints_path == '../checkpoints':
             opt.checkpoints_path += ('/' + tmp_dataset[0] + '/' + opt.long_name)
 
         return opt

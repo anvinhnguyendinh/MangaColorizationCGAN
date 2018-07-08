@@ -1,5 +1,4 @@
 from src import ModelOptions, main
 
-options = ModelOptions().parse()
-options.mode = 1
+options = ModelOptions().parse(1)
 main(options)

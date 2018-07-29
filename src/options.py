@@ -50,7 +50,7 @@ class ModelOptions:
         parser.add_argument('--gpu-ids', type=str, default='5', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         parser.add_argument('--evaluate-type', type=str2bool, default=True, help='True for validation')
         parser.add_argument('--dimension', type=int, default=256, help='each image has size dimension x dimension')
-
+        parser.add_argument('--baseline', type=str2bool, default=False, help='True for running the baseline model on the selected dataset (default : False)')
         self._parser = parser
 
     def parse(self, mode=None):
@@ -68,7 +68,7 @@ class ModelOptions:
             opt.evaluate_type = True
         
         opt.long_name = '_'.join([opt.dataset, opt.color_space.lower(), str(opt.dimension)])
-        opt.long_long_name = '_'.join(['val' if opt.evaluate_type else 'test', opt.long_name])
+        opt.long_long_name = '_'.join(['val' if opt.evaluate_type else 'test', opt.long_name]) #
         
         tmp_dataset = opt.dataset.split('-')
         if opt.dataset_path == '../dataset':

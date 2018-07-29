@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 
 
 def stitch_images(grayscale, original, pred):
-    gap = 5
+    gap = 5 # 0, 5
     width, height = original[0][:, :, 0].shape
-    img_per_row = 2 if width > 200 else 4
+    img_per_row = 2 if width > 200 else 4 # 1 | 4
     img = Image.new('RGB', (width * img_per_row * 3 + gap * (img_per_row - 1), height * int(len(original) / img_per_row)))
 
     grayscale = np.array(grayscale).squeeze()

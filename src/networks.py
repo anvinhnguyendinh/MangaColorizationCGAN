@@ -131,7 +131,7 @@ class Baseline(object):
 
         with tf.variable_scope(self.name, reuse=reuse_variables):
 
-            #layers = []
+            layers = []
 
             # encoder branch
             for index, kernel in enumerate(self.encoder_kernels):
@@ -147,8 +147,8 @@ class Baseline(object):
                     seed=seed
                 )
 
-                # save contracting path layers to be used for skip connections
-                #layers.append(output)
+                #save contracting path layers to be used for skip connections
+                layers.append(output)
 
                 if kernel[2] > 0:
                     output = tf.nn.dropout(output, keep_prob=1 - kernel[2], name='dropout_' + name, seed=seed)
@@ -172,7 +172,8 @@ class Baseline(object):
 
                 # concat the layer from the contracting path with the output of the current layer
                 # concat only the channels (axis=3)
-                #output = tf.concat([layers[len(layers) - index - 2], output], axis=3)
+                # print('index is %d'%(index))
+                output = tf.concat([layers[len(layers) - index - 2], output], axis=3)
 
             output = conv2d(
                 inputs=output,
@@ -188,5 +189,3 @@ class Baseline(object):
             self.var_list = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, self.name)
 
             return output
-
-

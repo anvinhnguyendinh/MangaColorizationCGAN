@@ -1,0 +1,1201 @@
+seed:571
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 210ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.753369 - G L1: 7.062989 - G gan: 0.690380 - accuracy: 0.600060
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:263
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 218ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.782888 - G L1: 7.092507 - G gan: 0.690381 - accuracy: 0.599894
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:667
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 214ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.750534 - G L1: 7.060153 - G gan: 0.690380 - accuracy: 0.600888
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:255
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 214ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.800960 - G L1: 7.110579 - G gan: 0.690380 - accuracy: 0.599168
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:1014
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 214ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.756628 - G L1: 7.066247 - G gan: 0.690381 - accuracy: 0.600738
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:514
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 219ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.739546 - G L1: 7.049166 - G gan: 0.690380 - accuracy: 0.600475
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:222
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.735320 - G L1: 7.044939 - G gan: 0.690380 - accuracy: 0.598905
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:629
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 223ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.858247 - G L1: 7.167867 - G gan: 0.690381 - accuracy: 0.600094
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:710
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 222ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.786905 - G L1: 7.096525 - G gan: 0.690380 - accuracy: 0.601880
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:171
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 213ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.838521 - G L1: 7.148140 - G gan: 0.690380 - accuracy: 0.601682
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:499
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.743097 - G L1: 7.052717 - G gan: 0.690380 - accuracy: 0.600987
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:518
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 198ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.799640 - G L1: 7.109260 - G gan: 0.690380 - accuracy: 0.599553
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:949
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 222ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.748228 - G L1: 7.057847 - G gan: 0.690380 - accuracy: 0.599837
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:545
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 211ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.744297 - G L1: 7.053917 - G gan: 0.690380 - accuracy: 0.598856
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:230
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 216ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.745532 - G L1: 7.055151 - G gan: 0.690381 - accuracy: 0.599537
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:701
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 224ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.771993 - G L1: 7.081613 - G gan: 0.690380 - accuracy: 0.600465
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:761
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 224ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.838882 - G L1: 7.148502 - G gan: 0.690380 - accuracy: 0.600574
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:407
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 221ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.843764 - G L1: 7.153384 - G gan: 0.690380 - accuracy: 0.600332
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:826
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 208ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.751018 - G L1: 7.060637 - G gan: 0.690381 - accuracy: 0.601485
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:827
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 215ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.833882 - G L1: 7.143502 - G gan: 0.690381 - accuracy: 0.600732
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:22
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 233ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.832945 - G L1: 7.142565 - G gan: 0.690380 - accuracy: 0.600765
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:609
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 218ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.772528 - G L1: 7.082148 - G gan: 0.690380 - accuracy: 0.600713
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:1
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.877686 - G L1: 7.187305 - G gan: 0.690381 - accuracy: 0.601299
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:400
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 213ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.790905 - G L1: 7.100525 - G gan: 0.690381 - accuracy: 0.601707
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:83
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.808124 - G L1: 7.117744 - G gan: 0.690380 - accuracy: 0.600057
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:671
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.825615 - G L1: 7.135235 - G gan: 0.690380 - accuracy: 0.599954
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:4
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 222ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.794124 - G L1: 7.103744 - G gan: 0.690380 - accuracy: 0.600203
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:468
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 216ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.730597 - G L1: 7.040217 - G gan: 0.690381 - accuracy: 0.600501
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:998
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 211ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.756126 - G L1: 7.065746 - G gan: 0.690380 - accuracy: 0.600829
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:794
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.791358 - G L1: 7.100978 - G gan: 0.690380 - accuracy: 0.601588
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:312
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.689996 - G L1: 6.999616 - G gan: 0.690380 - accuracy: 0.600389
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:879
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 222ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.748662 - G L1: 7.058281 - G gan: 0.690380 - accuracy: 0.600676
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:573
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 219ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.738649 - G L1: 7.048269 - G gan: 0.690380 - accuracy: 0.600165
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:520
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.755923 - G L1: 7.065543 - G gan: 0.690380 - accuracy: 0.601169
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:873
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 221ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.771587 - G L1: 7.081207 - G gan: 0.690380 - accuracy: 0.599718
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:246
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.733887 - G L1: 7.043507 - G gan: 0.690380 - accuracy: 0.600201
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:994
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 217ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.835752 - G L1: 7.145372 - G gan: 0.690380 - accuracy: 0.602277
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:347
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 214ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.781822 - G L1: 7.091442 - G gan: 0.690380 - accuracy: 0.600451
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:899
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 218ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.798874 - G L1: 7.108493 - G gan: 0.690381 - accuracy: 0.600666
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:771
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 216ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.838059 - G L1: 7.147679 - G gan: 0.690380 - accuracy: 0.600426
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:90
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 223ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.758399 - G L1: 7.068018 - G gan: 0.690380 - accuracy: 0.600577
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:492
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.831946 - G L1: 7.141566 - G gan: 0.690380 - accuracy: 0.601561
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:136
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.719874 - G L1: 7.029493 - G gan: 0.690380 - accuracy: 0.601147
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:582
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.768958 - G L1: 7.078578 - G gan: 0.690380 - accuracy: 0.599908
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:477
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 210ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.813599 - G L1: 7.123219 - G gan: 0.690380 - accuracy: 0.600464
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:695
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 221ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.805734 - G L1: 7.115354 - G gan: 0.690380 - accuracy: 0.599923
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:818
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 217ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.846308 - G L1: 7.155927 - G gan: 0.690380 - accuracy: 0.598991
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:90
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 214ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.758399 - G L1: 7.068018 - G gan: 0.690380 - accuracy: 0.600577
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:1002
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 224ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.800523 - G L1: 7.110143 - G gan: 0.690381 - accuracy: 0.600271
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:322
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 216ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.720231 - G L1: 7.029850 - G gan: 0.690380 - accuracy: 0.599358
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:503
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 215ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.780054 - G L1: 7.089674 - G gan: 0.690380 - accuracy: 0.599750
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:384
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 216ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.762381 - G L1: 7.072000 - G gan: 0.690381 - accuracy: 0.600249
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:914
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.798499 - G L1: 7.108119 - G gan: 0.690380 - accuracy: 0.600365
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:551
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 217ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.735516 - G L1: 7.045135 - G gan: 0.690381 - accuracy: 0.599041
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:965
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.746368 - G L1: 7.055987 - G gan: 0.690381 - accuracy: 0.600443
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:753
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 213ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.750667 - G L1: 7.060287 - G gan: 0.690380 - accuracy: 0.600746
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:969
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 222ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.829351 - G L1: 7.138970 - G gan: 0.690381 - accuracy: 0.600663
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:466
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 219ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.803668 - G L1: 7.113288 - G gan: 0.690380 - accuracy: 0.600410
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:372
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 227ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.850849 - G L1: 7.160469 - G gan: 0.690380 - accuracy: 0.600018
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:1004
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 217ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.746764 - G L1: 7.056383 - G gan: 0.690381 - accuracy: 0.600633
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:358
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.753993 - G L1: 7.063613 - G gan: 0.690380 - accuracy: 0.600506
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:630
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 222ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.813890 - G L1: 7.123509 - G gan: 0.690380 - accuracy: 0.600806
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:1016
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 228ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.798536 - G L1: 7.108156 - G gan: 0.690381 - accuracy: 0.598321
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:248
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 227ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.846824 - G L1: 7.156444 - G gan: 0.690381 - accuracy: 0.599962
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:1015
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 225ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.754560 - G L1: 7.064180 - G gan: 0.690380 - accuracy: 0.600475
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:804
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 221ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.778155 - G L1: 7.087775 - G gan: 0.690381 - accuracy: 0.601470
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:880
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 201ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.784761 - G L1: 7.094380 - G gan: 0.690381 - accuracy: 0.601369
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:12
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 208ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.751208 - G L1: 7.060827 - G gan: 0.690381 - accuracy: 0.599805
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:874
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 213ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.733141 - G L1: 7.042760 - G gan: 0.690381 - accuracy: 0.600311
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:350
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 225ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.830358 - G L1: 7.139977 - G gan: 0.690380 - accuracy: 0.600584
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:938
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 235ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.748576 - G L1: 7.058195 - G gan: 0.690380 - accuracy: 0.601781
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:992
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 223ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.774492 - G L1: 7.084111 - G gan: 0.690381 - accuracy: 0.600554
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:696
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 231ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.716333 - G L1: 7.025953 - G gan: 0.690380 - accuracy: 0.600933
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:1000
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 226ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.862248 - G L1: 7.171868 - G gan: 0.690380 - accuracy: 0.600347
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:949
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.748229 - G L1: 7.057848 - G gan: 0.690380 - accuracy: 0.599837
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:317
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 210ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.840958 - G L1: 7.150577 - G gan: 0.690381 - accuracy: 0.599657
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:421
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 217ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.837785 - G L1: 7.147405 - G gan: 0.690380 - accuracy: 0.600636
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:654
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 213ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.735230 - G L1: 7.044849 - G gan: 0.690380 - accuracy: 0.599934
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:347
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 215ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.781822 - G L1: 7.091442 - G gan: 0.690380 - accuracy: 0.600451
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:345
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 5s 227ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.762817 - G L1: 7.072437 - G gan: 0.690381 - accuracy: 0.601460
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:541
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.851255 - G L1: 7.160874 - G gan: 0.690381 - accuracy: 0.600448
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:499
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 210ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.743097 - G L1: 7.052717 - G gan: 0.690380 - accuracy: 0.600987
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:63
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 215ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.763587 - G L1: 7.073206 - G gan: 0.690380 - accuracy: 0.599952
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:378
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 207ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.697655 - G L1: 7.007274 - G gan: 0.690380 - accuracy: 0.600591
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:127
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 215ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.829504 - G L1: 7.139123 - G gan: 0.690380 - accuracy: 0.600188
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:251
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 219ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.807019 - G L1: 7.116639 - G gan: 0.690381 - accuracy: 0.598367
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:965
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 218ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.746368 - G L1: 7.055987 - G gan: 0.690381 - accuracy: 0.600444
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:434
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 218ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.784086 - G L1: 7.093706 - G gan: 0.690380 - accuracy: 0.600238
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:720
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.758193 - G L1: 7.067812 - G gan: 0.690381 - accuracy: 0.601145
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:295
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 215ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.734820 - G L1: 7.044440 - G gan: 0.690381 - accuracy: 0.600233
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:816
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 212ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.754389 - G L1: 7.064009 - G gan: 0.690381 - accuracy: 0.600312
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:609
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.772528 - G L1: 7.082148 - G gan: 0.690380 - accuracy: 0.600712
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:717
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 216ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.815683 - G L1: 7.125303 - G gan: 0.690380 - accuracy: 0.601977
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:641
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 223ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.733408 - G L1: 7.043028 - G gan: 0.690380 - accuracy: 0.599974
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:915
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 222ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.877070 - G L1: 7.186689 - G gan: 0.690380 - accuracy: 0.600745
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:1018
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 219ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.795364 - G L1: 7.104984 - G gan: 0.690381 - accuracy: 0.599799
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:223
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 206ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.759836 - G L1: 7.069455 - G gan: 0.690381 - accuracy: 0.601072
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:478
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 219ms/step
+Results: D loss: 1.386702 - D fake: 0.696322 - D real: 0.690379 - G loss: 7.771513 - G L1: 7.081132 - G gan: 0.690381 - accuracy: 0.601401
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:948
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 222ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.765024 - G L1: 7.074643 - G gan: 0.690381 - accuracy: 0.600719
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+seed:481
+loading model...
+
+
+
+Evaluating epoch: 0
+20/20 [==============================] - 4s 220ms/step
+Results: D loss: 1.386702 - D fake: 0.696323 - D real: 0.690379 - G loss: 7.834452 - G L1: 7.144071 - G gan: 0.690380 - accuracy: 0.601466
+
+
+
+saving sample 000_onepiece-gray_rgb_256_14350.png - learning rate: 0.0002808156
+0.6004496000000002

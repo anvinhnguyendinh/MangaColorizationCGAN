@@ -9,6 +9,8 @@ CIFAR10_DATASET = 'cifar10'
 PLACES365_DATASET = 'places365'
 BLEACH_DATASET = 'bleach'
 ONEPIECE_DATASET = 'onepiece'
+TWOPIECE_DATASET = 'twopiece'
+ALAPIECE_DATASET = 'alapiece'
 
 
 class BaseDataset():

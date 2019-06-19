@@ -1,4 +1,11 @@
-# Image Colorization with Generative Adversarial Networks 
+# Manga Colorization with Conditional Generative Adversarial Network
+
+We partly modify the repo https://github.com/ImagingLab/Colorizing-with-GANs to fulfill our self-invented project task of manga colorization.
+
+From here on, we keep their README.
+
+
+
 In this work, we generalize the colorization procedure using a conditional Deep Convolutional Generative Adversarial Network (DCGAN) as as suggested by [Pix2Pix]. The network is trained on the datasets [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) and [Places365](http://places2.csail.mit.edu). Some of the results from Places365 dataset are [shown here.](#places365-results)
 
 ## Prerequisites
